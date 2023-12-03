@@ -13,8 +13,11 @@ public class Main {
 
         Solution solution = new Solution();
         EngineSchematic engineSchematic = solution.mapEngine(input);
-        long partsSum = solution.solve(engineSchematic);
 
-        System.out.printf("Sum of all of the part numbers in engine schematic is %d", partsSum);
+        long partsSum = solution.calculateParts(engineSchematic);
+        System.out.printf("Sum of all of the part numbers in engine schematic is %d%n", partsSum);
+
+        long gearsRation = solution.calculateGears(engineSchematic);
+        System.out.printf("Sum of all of the gear ratios in engine schematic is %d", gearsRation);
     }
 }

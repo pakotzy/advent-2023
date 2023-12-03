@@ -12,41 +12,51 @@ class SolutionTest {
     private final Solution solution = new Solution();
 
     @Test
-    void solveProblemInput() {
-        assertEquals(522726, solution.solve(solution.mapEngine(getProblemInput())));
+    void calculatePartsWhenProblemInput() {
+        assertEquals(522726, solution.calculateParts(solution.mapEngine(getProblemInput())));
     }
 
     @Test
-    void solveExampleInput() {
-        assertEquals(4361, solution.solve(solution.mapEngine(getExampleInput())));
+    void calculateGearsWhenProblemInput() {
+        assertEquals(81721933, solution.calculateGears(solution.mapEngine(getProblemInput())));
+    }
+
+    @Test
+    void calculatePartsWhenExampleInput() {
+        assertEquals(4361, solution.calculateParts(solution.mapEngine(getExampleInput())));
+    }
+
+    @Test
+    void calculateGearsWhenExampleInput() {
+        assertEquals(467835, solution.calculateGears(solution.mapEngine(getExampleInput())));
     }
 
     @Test
     void addEnginePartsExampleInput() {
         EngineSchematic engineSchematic = solution.mapEngine(getExampleInput());
 
-        Point markerPoint = engineSchematic.getMarkers().get(0);
+        Point markerPoint = new Point(3, 1);
         List<String> partsAtPoint = engineSchematic.getEngineParts().get(markerPoint);
         assertEquals("467", partsAtPoint.get(0));
         assertEquals("35", partsAtPoint.get(1));
 
-        markerPoint = engineSchematic.getMarkers().get(1);
+        markerPoint = new Point(6, 3);
         partsAtPoint = engineSchematic.getEngineParts().get(markerPoint);
         assertEquals("633", partsAtPoint.get(0));
 
-        markerPoint = engineSchematic.getMarkers().get(2);
+        markerPoint = new Point(3, 4);
         partsAtPoint = engineSchematic.getEngineParts().get(markerPoint);
         assertEquals("617", partsAtPoint.get(0));
 
-        markerPoint = engineSchematic.getMarkers().get(3);
+        markerPoint = new Point(5, 5);
         partsAtPoint = engineSchematic.getEngineParts().get(markerPoint);
         assertEquals("592", partsAtPoint.get(0));
 
-        markerPoint = engineSchematic.getMarkers().get(4);
+        markerPoint = new Point(3, 8);
         partsAtPoint = engineSchematic.getEngineParts().get(markerPoint);
         assertEquals("664", partsAtPoint.get(0));
 
-        markerPoint = engineSchematic.getMarkers().get(5);
+        markerPoint = new Point(5, 8);
         partsAtPoint = engineSchematic.getEngineParts().get(markerPoint);
         assertEquals("755", partsAtPoint.get(0));
         assertEquals("598", partsAtPoint.get(1));
@@ -58,7 +68,7 @@ class SolutionTest {
 
         EngineSchematic engineSchematic = solution.mapEngine(input);
 
-        Point markerPoint = engineSchematic.getMarkers().get(0);
+        Point markerPoint = engineSchematic.getMarkers().keySet().stream().findFirst().orElseGet(Point::new);
         List<String> partsAtPoint = engineSchematic.getEngineParts().get(markerPoint);
         assertEquals("111", partsAtPoint.get(0));
     }

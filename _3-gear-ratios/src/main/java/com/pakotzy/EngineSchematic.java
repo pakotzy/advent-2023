@@ -6,14 +6,14 @@ import java.util.List;
 
 public class EngineSchematic {
     private final Map<Point, List<String>> engineParts = new HashMap<>();
-    private final List<Point> markers = new ArrayList<>();
+    private final Map<Point, Character> markers = new HashMap<>();
 
-    public List<Point> getMarkers() {
+    public Map<Point, Character> getMarkers() {
         return markers;
     }
 
-    public void addMarker(Point markerLocation) {
-        markers.add(markerLocation);
+    public void addMarker(Point location, Character marker) {
+        markers.put(location, marker);
     }
 
     public Map<Point, List<String>> getEngineParts() {
