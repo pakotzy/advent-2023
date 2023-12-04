@@ -20,6 +20,26 @@ class SolutionTest {
         assertEquals(21485, solution.calculateMatchPoints(getProblemInput()));
     }
 
+    @Test
+    void calculateTotalCardsWhenExampleInput() {
+        assertEquals(30, solution.calculateTotalCardsRecursion(getExampleInput()));
+    }
+
+    @Test
+    void calculateTotalCards2WhenExampleInput() {
+        assertEquals(30, solution.calculateTotalCardsMath(getExampleInput()));
+    }
+
+    @Test
+    void calculateTotalCards2WhenProblemInput() {
+        assertEquals(11024379, solution.calculateTotalCardsMath(getProblemInput()));
+    }
+
+    @Test
+    void calculateTotalCardsWhenProblemInput() {
+        assertEquals(11024379, solution.calculateTotalCardsRecursion(getProblemInput()));
+    }
+
     private List<String> getExampleInput() {
         return Arrays.asList("""
                 Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53

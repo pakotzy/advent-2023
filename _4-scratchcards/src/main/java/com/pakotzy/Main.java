@@ -14,5 +14,8 @@ public class Main {
         Solution solution = new Solution();
         long totalWorth = solution.calculateMatchPoints(input);
         System.out.printf("Total worth of points are is %d%n", totalWorth);
+
+        int totalCards = solution.calculateTotalCardsMath(input);
+        System.out.printf("We end up with %d total scratchtcards", totalCards);
     }
 }
