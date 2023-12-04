@@ -3,18 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.pakotzy</groupId>
+        <artifactId>advent-2023</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
-    <groupId>com.pakotzy</groupId>
-    <artifactId>advent-2023</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <modules>
-        <module>common</module>
-        <module>_1-trebuchet</module>
-        <module>_2-cube-conundrum</module>
-        <module>_3-gear-ratios</module>
-        <module>_4-scratchcards</module>
-    </modules>
+    <artifactId>_4-scratchcards</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -24,10 +19,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.10.1</version>
-            <scope>test</scope>
+            <groupId>com.pakotzy</groupId>
+            <artifactId>common</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
