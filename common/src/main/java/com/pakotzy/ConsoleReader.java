@@ -36,7 +36,7 @@ public class ConsoleReader {
                         if (!lineContent.isEmpty()) {
                             content.add(lineContent.toString());
                             lineContent = new StringBuilder();
-                        } else {
+                        } else if (!buffer.hasRemaining()) {
                             throw new ClosedByInterruptException();
                         }
                     } else {
